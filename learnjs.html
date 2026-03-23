@@ -1,0 +1,192 @@
+<!DOCTYPE html>
+<html lang="en">
+
+<head>
+    <meta charset="utf-8">
+    <meta name="viewport"  content="width=device-width, initial-scale=1.0">
+    <title>Learn JS</title>
+
+    <style>
+ @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&family=Lora:ital,wght@0,400;1,400&display=swap');
+        :root {
+        /* Comfort palette */
+        --bg: #f5f3f0;
+        --panel: #faf8f5ee;
+        --panel2: #faf8f5bb;
+        --text: #2d2a26;
+        --muted: #6b6560;
+        --line: #e3ddd5;
+        
+        /* Accent colors - muted and warm */
+        --hot: #4a6fa5;
+        --warn: #a67c52;
+        --bad: #b85c5c;
+        --ok: #5a8f6f;
+        --today: #7a9fd4;
+        
+        /* Layered shadow system */
+        --shadow-sm: 0 1px 3px rgba(45, 42, 38, 0.06), 0 1px 2px rgba(45, 42, 38, 0.03);
+        --shadow-md: 0 2px 8px rgba(45, 42, 38, 0.08), 0 1px 3px rgba(45, 42, 38, 0.05);
+        --shadow-lg: 0 4px 16px rgba(45, 42, 38, 0.12), 0 2px 6px rgba(45, 42, 38, 0.08);
+        --shadow-hover: 0 6px 20px rgba(45, 42, 38, 0.15), 0 3px 8px rgba(45, 42, 38, 0.10);
+        --shadow-active: 0 2px 10px rgba(74, 111, 165, 0.25), 0 1px 4px rgba(74, 111, 165, 0.15);
+        --radius: 14px;
+        
+
+        }
+
+  
+        body {
+            font-family: 'Share Tech Mono', monospace;
+            background-color: rgb(179, 179, 156);
+            text-align: center;
+            margin: 50px;
+        }
+        h1 {
+            color: black;
+            margin-top: 50px;
+        }
+        p {
+            margin-top: 20px;
+        }
+
+        .backgroundImage {
+            width: 1264px;
+            height: 848px;
+            background-image: url('image2.png');
+            background-size: cover;
+            background-position: center;
+            margin: auto;
+            padding-top: 1px;
+            border-radius: 10px;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5); /* A dark, slightly blurred shadow */
+
+        }
+
+        .theLabel {
+            width: 300px;
+            height: 200px;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 40px;
+            background-color: rgb(245, 245, 241);
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5);
+        }
+        .theContent {
+            width: 300px;
+            height: 150px;
+            border: 2px solid black;
+            border-radius: 10px;
+            margin-top: 15px;
+            margin-left: auto;
+            margin-right: auto;
+            font-size: 48 px;
+            background-color: rgb(245, 245, 241);
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5); /* A dark, slightly blurred shadow */        }
+        
+            .inTheBox {
+            margin: 50px;
+            
+        }
+        button {
+            margin-top: 20px;
+            padding: 10px 20px;
+            font-size: 28px;
+            cursor: pointer;
+            color: #363a37;
+            border: 2px black;
+            border-radius: 5px;
+            background-color:#7a9fd4;
+            box-shadow: 2px 5px 10px rgba(0, 0, 0, 0.5); /* A dark, slightly blurred shadow */        }
+        
+        button:hover {
+            background-color: #3a517c;
+            color: white;
+            box-shadow: 4px 8px 15px rgba(0, 0, 0, 0.75); /* A dark, slightly blurred shadow */        }
+        
+    </style> 
+
+</head>
+
+<body>
+    <div class="backgroundImage" id="bgImage">
+
+    
+        <h1 id="theHeading">Basics</h1>
+        <p>This is my first attempt at writing JavaScript.</p>
+        <p>How does JS work? understanding syntax.</p>
+        
+        <div class="theLabel">
+            <p class="inTheBox" id="labelText">
+                SIDE
+            </p>
+        </div>
+        
+        <div class="theContent">
+            <p class="inTheBox" id="contentText">
+                A thin vertical section of the object
+            </p>
+        </div>
+        
+        <button id="changeTextBtn">Change Text</button>
+    </div>
+    <script>
+
+        // Change Elements on Page Load
+        document.getElementById("theHeading").innerHTML = "Heading";
+        document.getElementById("labelText").innerHTML = "Label";
+        document.getElementById("contentText").innerHTML = "Content";
+        document.getElementById("changeTextBtn").innerHTML = "Press Me";
+
+        // Find and Store Iamge
+        const bgImage = document.getElementById("bgImage");
+        
+        // Find and Store Button
+        const changeTextBtn = document.getElementById("changeTextBtn");
+        
+        // Find and Store Heading
+        const theHeading = document.getElementById("theHeading");
+
+        // Find and Store Label Text
+        const labelText = document.getElementById("labelText");
+
+        // Find and Store Content Text
+        const contentText = document.getElementById("contentText"); 
+
+        // Create a variable to track current state
+        let currentState = 0;   
+
+        // Add event listener
+        changeTextBtn.addEventListener("click", function() {
+            // Check current state and toggle
+            if (currentState === 0) {
+              theHeading.innerHTML = "Basics"
+              labelText.innerHTML = "FRONT";
+              contentText.innerHTML = "The front facing side of the object";
+              changeTextBtn.innerHTML = "Once Again";
+              bgImage.style.backgroundImage = "url('image1.png')";
+              currentState = 1;   
+            } else if (currentState === 1) {
+                theHeading.innerHTML = "A Bit More"
+                labelText.innerHTML = "BACK";
+                contentText.innerHTML = "The rear side of the object";
+                changeTextBtn.innerHTML = "Keep Pressing";
+                bgImage.style.backgroundImage = "url('image2.png')";
+                currentState = 2;
+            } else if (currentState === 2) {
+                theHeading.innerHTML = "Even Better"
+                labelText.innerHTML = "SIDE";
+                contentText.innerHTML = "A thin vertical slice view of the side of the object"
+                changeTextBtn.innerHTML = "You Got This";
+                bgImage.style.backgroundImage = "url('image3.png')";
+                currentState = 0;
+            }
+               
+        });
+
+
+    </script>
+</body>
+</html>        

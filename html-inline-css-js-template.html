@@ -1,0 +1,42 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>Inline CSS and JS Template</title>
+    <!-- Inline CSS goes here within the <style> tags -->
+    <style>
+        body {
+            font-family: Arial, sans-serif;
+            background-color: #f0f0f0;
+            color: #333;
+            margin: 20px;
+        }
+        h1 {
+            color: #007bff;
+        }
+        .highlight {
+            background-color: yellow;
+            padding: 5px;
+        }
+    </style>
+</head>
+<body>
+
+    <h1>Welcome to the Page</h1>
+    <p>This is a paragraph with some content.</p>
+    <button onclick="changeText()">Click me</button>
+    <p id="targetElement">Original text here.</p>
+
+    <!-- Inline JavaScript goes here within the <script> tags -->
+    <script>
+        function changeText() {
+            // JavaScript code to modify an element
+            var element = document.getElementById("targetElement");
+            element.textContent = "Text has been changed by JavaScript!";
+            element.classList.add("highlight"); // Apply the inline CSS class
+        }
+    </script>
+
+</body>
+</html>

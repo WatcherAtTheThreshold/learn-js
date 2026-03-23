@@ -1,0 +1,212 @@
+<!DOCTYPE html>
+<html lang="en">
+    <head>
+        <meta charset="UTF-8">
+        <meta name="viewport" content="width=device-width, initial-scale=1.0">
+        <title>A Growing Plant</title>
+        <link rel="preload" as="image" href="plant1.png">
+        <link rel="preload" as="image" href="plant2.png">
+        <link rel="preload" as="image" href="plant3.png">
+        <link rel="preload" as="image" href="plant4.png">
+        <link rel="preload" as="image" href="plant5.png">
+        <link rel="preload" as="image" href="plant6.png">
+        <link rel="preload" as="image" href="plant7.png">
+        <link rel="preload" as="image" href="plant8.png">
+        <link rel="preload" as="image" href="plant9.png">
+        <link rel="preload" as="image" href="plant10.png">
+        <link rel="preload" as="image" href="plant11.png">
+        <link rel="preload" as="image" href="plant12.png">
+        <link rel="preload" as="image" href="plant13.png">
+        <link rel="preload" as="image" href="plant14.png">
+        <style>
+              @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&family=Lora:ital,wght@0,400;1,400&display=swap');
+
+            body {
+                font-family: 'Share Tech Mono', monospace;   
+                background-color: #8c968c;
+            }
+
+            p {
+                 font-size: 24px;
+            }
+            .header {
+                text-align: center;
+                padding: 15px;
+                height: 350px;
+                width: 600px;
+                margin-left: auto;
+                margin-right: auto;
+                background-color: #f3e8c8;
+                color: #000000;
+                border: 2px solid #504d43;
+                border-radius: 10px;    
+            }
+            .bgImage {
+                background-color:#f3e8c8;
+                background-size: cover;
+                background-position: center;
+                height: 300px;
+                width: 300px;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top: 20px;
+                border: 5px solid #f3e8c8;
+                border-radius: 10px;
+                z-index: -1;
+                position: relative;
+            }
+            .heroImage {
+                width: 256px;
+                height: 256px;
+                background-image: url('plant1.png');
+                background-color: #5b6d72;
+                background-position: center;
+                z-index: 1;
+                margin-left: auto;
+                margin-right: auto;
+                margin-top:20px;
+                border: 2px solid #000000;
+                border-radius: 10px;
+                position: relative;
+                
+
+            }
+             .heroImage:hover {
+                width: 256px;
+                height: 256px;
+                background-image: url('plant1.png');
+                transition: background-image 0.3s ease-in-out;
+            }
+             .bgImage:hover {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                transition: box-shadow 0.3s ease-in-out;
+            }
+             .header:hover {
+                box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
+                transition: box-shadow 0.3s ease-in-out;
+            }
+            .heroBorder {
+                width: 308px;
+                height: 308px;
+                background-color: transparent;
+                border: 2px solid #000000;
+                border-radius: 10px;
+                position: relative;
+                margin-top: -285px;
+                right: 6px;
+                z-index: -5;
+            }
+            .field {
+                width: 101%;
+                min-height: 33vh;
+                background-color: #f3e8c8;
+                background-position: center;
+                z-index: -2;
+                overflow: show;
+                margin-top: -120px;
+                position: relative;
+                left: 50%;
+                transform: translateX(-50%);
+                border: 2px solid #000000;
+                border-radius: 10px;
+              
+
+            }
+        </style>
+    </head>   
+       <body>
+            <div class="header">
+                <h1>A Growing Plant</h1> 
+                <p>The cycle of life and death.</p>
+                <p>Ebb and flow, like music.</p>
+                <p>The dreamers making the dream.</p>
+            </div>
+            <div class="bgImage">
+                <div class="heroImage" id="blinker">
+
+                </div>
+                <div class="heroBorder">
+                
+                </div>  
+            </div>
+            <div class="field">
+
+            </div>
+           
+        <script >
+            const blinker = document.getElementById('blinker');
+        
+            function randomPing(minDelay, maxDelay) {
+                // Calculate a random time between minDelay and maxDelay (in ms)
+                const delay = Math.floor(Math.random() * (maxDelay - minDelay + 1)) + minDelay;
+
+                setTimeout(() => {
+                    blinker.style.backgroundImage = "url('plant1.png')";
+
+                    setTimeout(() => {
+                        blinker.style.backgroundImage = "url('plant2.png')";
+                  
+                        setTimeout(() => {
+                            blinker.style.backgroundImage = "url('plant3.png')";
+                    
+                            setTimeout(() => {
+                                blinker.style.backgroundImage = "url('plant4.png')";
+
+                                setTimeout(() => {
+                                    blinker.style.backgroundImage = "url('plant5.png')";
+
+                                    setTimeout(() => {
+                                        blinker.style.backgroundImage = "url('plant6.png')";
+
+                                        setTimeout(() => {
+                                            blinker.style.backgroundImage = "url('plant7.png')";
+
+                                            setTimeout(() => {
+                                                blinker.style.backgroundImage = "url('plant8.png')";
+
+                                                setTimeout(() => {
+                                                    blinker.style.backgroundImage = "url('plant9.png')";
+
+                                                    setTimeout(() => {
+                                                        blinker.style.backgroundImage = "url('plant10.png')";
+
+                                                        setTimeout(() => {
+                                                            blinker.style.backgroundImage = "url('plant11.png')";
+
+                                                            setTimeout(() => {
+                                                                blinker.style.backgroundImage = "url('plant12.png')";
+
+                                                                setTimeout(() => {
+                                                                    blinker.style.backgroundImage = "url('plant13.png')";
+
+                                                                    setTimeout(() => {
+                                                                        blinker.style.backgroundImage = "url('plant14.png')";
+                                // Call the function again to schedule the next ping
+                                randomPing(minDelay, maxDelay);
+                                                                    }, 600);
+                                                                }, 400);
+                                                            }, 300);
+                                                        }, 250);
+                                                    }, 200);
+                                                }, 250);
+                                            }, 300); 
+                                        }, 300); 
+                                    }, 300);  
+                                }, 300);    
+                            }, 300);
+                        }, 400);
+                    }, 600);
+                
+                }, delay);
+                }
+
+                // Example: Ping randomly between 1 and 5 seconds (1000ms - 5000ms)
+                randomPing(2000, 3000);
+          
+
+        </script>
+
+      
+        </body>
+    
+</html>
