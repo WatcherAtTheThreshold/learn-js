@@ -112,6 +112,9 @@
               
 
             }
+            .zoomed {
+                transform: scale(2);
+                transition: transform 0.3s ease;}
         </style>
     </head>   
        <body>
@@ -135,6 +138,10 @@
            
         <script >
             const blinker = document.getElementById('blinker');
+
+            blinker.addEventListener('click', () => {
+                blinker.classList.toggle('zoomed');
+            });
         
             function randomPing(minDelay, maxDelay) {
                 // Calculate a random time between minDelay and maxDelay (in ms)
