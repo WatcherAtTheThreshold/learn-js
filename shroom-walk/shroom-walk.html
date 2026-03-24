@@ -163,18 +163,19 @@
             <div class="field">
 
             </div>
-            <audio id="plantSound" src="plantSound.mp3" ></audio>
+            <audio id="plantSound" src="shroom-sound.mp3" ></audio>
            
         <script >
             const blinker = document.getElementById('blinker');
             const zoomer = document.getElementById('zoomer');
             const plantSound = document.getElementById('plantSound');
-            const frames = ['shroom-walk1.png', 'shroom-walk2.png', 'shroom-walk3.png', 'shroom-walk4.png', 
+            const frames = [
+            'shroom-walk1.png', 'shroom-walk2.png', 'shroom-walk3.png', 'shroom-walk4.png', 
             'shroom-walk5.png', 'shroom-walk6.png', 'shroom-walk7.png', 'shroom-walk8.png',
             'shroom-turnaround1.png', 'shroom-turnaround2.png','shroom-walk9.png', 'shroom-walk10.png', 
             'shroom-walk11.png', 'shroom-walk12.png', 'shroom-walk13.png', 'shroom-walk14.png',
             'shroom-walk15.png', 'shroom-walk16.png', 'shroom-turnaround3.png', 'shroom-turnaround4.png']; // Array of frame image URLs
-            const delays = [100, 100, 100, 100, 100, 100, 100, 100, 400, 300, 100, 100, 100, 100, 100, 100, 100, 100, 300, 400]; // Delay for each frame in ms
+            const delays = [200, 200, 200, 200, 200, 200, 200, 200, 500, 500, 200, 200, 200, 200, 200, 200, 200, 200, 500, 500]; // Delay for each frame in ms
 
             function playFrame(index) {
                     if (index >= frames.length) {
