@@ -3,7 +3,7 @@
     <head>
         <meta charset="UTF-8">
         <meta name="viewport" content="width=device-width, initial-scale=1.0">
-        <title>A Growing Plant</title>
+        <title>Growth</title>
         <link rel="preload" as="image" href="plant1.png">
         <link rel="preload" as="image" href="plant2.png">
         <link rel="preload" as="image" href="plant3.png">
@@ -25,9 +25,13 @@
                 font-family: 'Share Tech Mono', monospace;   
                 background-color: #8c968c;
             }
-
+            h1 {
+                    font-family: 'Press Start 2P', cursive;
+                    font-size: 32px;
+            }
             p {
-                 font-size: 24px;
+                 font-size: 28px;
+                
             }
             .header {
                 text-align: center;
@@ -41,6 +45,9 @@
                 border: 2px solid #504d43;
                 border-radius: 10px;    
             }
+            .para {
+                margin-top: 50px;
+            }
             .bgImage {
                 background-color:#f3e8c8;
                 background-size: cover;
@@ -52,9 +59,16 @@
                 margin-top: 20px;
                 border: 5px solid #f3e8c8;
                 border-radius: 10px;
-                z-index: -1;
+                z-index: 4;
                 position: relative;
+             }
+            .bgImage.zoomed {
+                transform: scale(2.55);
+                transition: transform 3s ease;
+                transform-origin: center 65%;
+                z-index: 5;
             }
+           
             .heroImage {
                 width: 256px;
                 height: 256px;
@@ -63,7 +77,7 @@
                 background-position: center;
                 background-size: contain;
                 background-repeat: no-repeat;
-                z-index: 1;
+                z-index: 3;
                 margin-left: auto;
                 margin-right: auto;
                 margin-top:20px;
@@ -73,19 +87,12 @@
                 cursor: pointer;
                 transition: transform 0.3s ease;
                 transform-origin: center center;
+                overflow: visible;
                 
 
             }
-            .heroImage.zoomed {
-                transform: scale(1.5);
-                transition: transform 0.3s ease;
-            }
-             .heroImage:hover {
-                width: 256px;
-                height: 256px;
-                background-image: url('plant1.png');
-                transition: background-image 0.3s ease-in-out;
-            }
+           
+            
              .bgImage:hover {
                 box-shadow: 0 4px 8px rgba(0, 0, 0, 0.3);
                 transition: box-shadow 0.3s ease-in-out;
@@ -103,15 +110,15 @@
                 position: relative;
                 margin-top: -285px;
                 right: 6px;
-                z-index: -3;
+                z-index: 2;
             }
             .field {
                 width: 101%;
                 min-height: 33vh;
                 background-color: #f3e8c8;
                 background-position: center;
-                z-index: -2;
-                overflow: show;
+                z-index: 1;
+                
                 margin-top: -120px;
                 position: relative;
                 left: 50%;
@@ -127,12 +134,14 @@
     </head>   
        <body>
             <div class="header">
-                <h1>A Growing Plant</h1> 
-                <p>The cycle of life and death.</p>
-                <p>Ebb and flow, like music.</p>
-                <p>The dreamers making the dream.</p>
+                <h1>Growth</h1> 
+                <div class="para">
+                    <p><b>The cycle of life and death.</b></p>
+                    <p><i>Click to zoom in</i> and hear,</p>
+                    <p>the music of the plants.</p>
+                </div>
             </div>
-            <div class="bgImage">
+            <div class="bgImage" id="zoomer">
                 <div class="heroImage" id="blinker">
 
                 </div>
@@ -143,14 +152,24 @@
             <div class="field">
 
             </div>
+            <audio id="plantSound" src="plantSound.mp3" ></audio>
            
         <script >
             const blinker = document.getElementById('blinker');
+            const zoomer = document.getElementById('zoomer');
+            const plantSound = document.getElementById('plantSound');
 
-            blinker.addEventListener('click', (e) => {
-                e.stopPropagation(); // Prevent the click event from bubbling up to the bgImage
-                blinker.classList.toggle('zoomed');
+            zoomer.addEventListener('click', () => {
+                zoomer.classList.toggle('zoomed');
+
+                if (zoomer.classList.contains('zoomed')) {
+                    plantSound.play();
+                } else {
+                    plantSound.pause();
+                }
             });
+
+            
         
             function randomPing(minDelay, maxDelay) {
                 // Calculate a random time between minDelay and maxDelay (in ms)
