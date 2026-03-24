@@ -61,6 +61,8 @@
                 background-image: url('plant1.png');
                 background-color: #5b6d72;
                 background-position: center;
+                background-size: contain;
+                background-repeat: no-repeat;
                 z-index: 1;
                 margin-left: auto;
                 margin-right: auto;
@@ -68,8 +70,15 @@
                 border: 2px solid #000000;
                 border-radius: 10px;
                 position: relative;
+                cursor: pointer;
+                transition: transform 0.3s ease;
+                transform-origin: center center;
                 
 
+            }
+            .heroImage.zoomed {
+                transform: scale(1.5);
+                transition: transform 0.3s ease;
             }
              .heroImage:hover {
                 width: 256px;
@@ -94,7 +103,7 @@
                 position: relative;
                 margin-top: -285px;
                 right: 6px;
-                z-index: -5;
+                z-index: -3;
             }
             .field {
                 width: 101%;
@@ -109,13 +118,11 @@
                 transform: translateX(-50%);
                 border: 2px solid #000000;
                 border-radius: 10px;
+                pointer-events: none;
               
 
             }
-            .zoomed {
-                transform: scale(2);
-                transition: transform 0.3s ease;
-            }
+            
         </style>
     </head>   
        <body>
@@ -140,7 +147,8 @@
         <script >
             const blinker = document.getElementById('blinker');
 
-            blinker.addEventListener('click', () => {
+            blinker.addEventListener('click', (e) => {
+                e.stopPropagation(); // Prevent the click event from bubbling up to the bgImage
                 blinker.classList.toggle('zoomed');
             });
         
