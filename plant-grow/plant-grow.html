@@ -26,22 +26,26 @@
                 background-color: #8c968c;
             }
             h1 {
-                    font-family: 'Press Start 2P', cursive;
-                    font-size: 32px;
+                font-family: 'Press Start 2P', cursive;
+                font-size: 44px;
             }
             p {
-                 font-size: 28px;
-                
+                font-size: 32px;
+                margin-top: 30px;
+            }
+            .sub {
+                font-size: 36px;
+                margin-top: 10px;
             }
             .header {
                 text-align: center;
-                padding: 15px;
+                padding: 10px;
                 height: 350px;
                 width: 600px;
                 margin-left: auto;
                 margin-right: auto;
                 background-color: #f3e8c8;
-                color: #000000;
+                color: #48494b;
                 border: 2px solid #504d43;
                 border-radius: 10px;    
             }
@@ -81,7 +85,7 @@
                 margin-left: auto;
                 margin-right: auto;
                 margin-top:20px;
-                border: 2px solid #000000;
+                border: 2px solid #48494b;
                 border-radius: 10px;
                 position: relative;
                 cursor: pointer;
@@ -105,7 +109,7 @@
                 width: 308px;
                 height: 308px;
                 background-color: transparent;
-                border: 2px solid #000000;
+                border: 2px solid #48494b;
                 border-radius: 10px;
                 position: relative;
                 margin-top: -285px;
@@ -123,7 +127,7 @@
                 position: relative;
                 left: 50%;
                 transform: translateX(-50%);
-                border: 2px solid #000000;
+                border: 2px solid #48494b;
                 border-radius: 10px;
                 pointer-events: none;
               
@@ -136,9 +140,9 @@
             <div class="header">
                 <h1>Growth</h1> 
                 <div class="para">
-                    <p><b>The cycle of life and death.</b></p>
-                    <p><i>Click to zoom in</i> and hear,</p>
-                    <p>the music of the plants.</p>
+                    <p class="sub"><b>The cycle of life and death.</b></p>
+                    <p><i>Click to zoom in and hear,</i></p>
+                    <p class="sub">the music of the plants.</p>
                 </div>
             </div>
             <div class="bgImage" id="zoomer">
@@ -218,19 +222,19 @@
                                                                         blinker.style.backgroundImage = "url('plant14.png')";
                                 // Call the function again to schedule the next ping
                                 randomPing(minDelay, maxDelay);
-                                                                    }, 600);
-                                                                }, 400);
-                                                            }, 300);
-                                                        }, 250);
-                                                    }, 200);
-                                                }, 250);
-                                            }, 300); 
-                                        }, 300); 
-                                    }, 300);  
-                                }, 300);    
-                            }, 300);
-                        }, 400);
-                    }, 600);
+                                                                    }, 1200);
+                                                                }, 800);
+                                                            }, 600);
+                                                        }, 500);
+                                                    }, 400);
+                                                }, 500);
+                                            }, 600); 
+                                        }, 600); 
+                                    }, 600);  
+                                }, 600);    
+                            }, 600);
+                        }, 800);
+                    }, 1200);
                 
                 }, delay);
                 }
