@@ -24,7 +24,11 @@
         <link rel="preload" as="image" href="shroom-turnaround2.png">
         <link rel="preload" as="image" href="shroom-turnaround3.png">
         <link rel="preload" as="image" href="shroom-turnaround4.png">
-       
+        <link rel="preload" as="image" href="pixelWork/pxGuy1.png">
+        <link rel="preload" as="image" href="pixelWork/pxGuy2.png">
+        <link rel="preload" as="image" href="pixelWork/pxGuy3.png">
+        <link rel="preload" as="image" href="pixelWork/pxGuy4.png">
+
         <style>
               @import url('https://fonts.googleapis.com/css2?family=Press+Start+2P&family=Share+Tech+Mono&family=Lora:ital,wght@0,400;1,400&display=swap');
 
@@ -140,6 +144,18 @@
               
 
             }
+            .fieldImage {
+                width: 22px;
+                height: 44px;
+                position: absolute;
+                bottom: 0;
+                left: 0;
+                background-image: url('pixelWork/pxGuy2.png');
+                background-size: cover;
+                background-position: center;
+                background-repeat: no-repeat;
+                image-rendering: pixelated;
+            }
             
         </style>
     </head>   
@@ -161,6 +177,9 @@
                 </div>  
             </div>
             <div class="field">
+                <div class="fieldImage" id="elf">
+
+                </div>
 
             </div>
             <audio id="plantSound" src="shroom-sound.mp3" ></audio>
@@ -186,22 +205,37 @@
                     blinker.style.backgroundImage = `url('${frames[index]}')`;
                     setTimeout(() => playFrame(index + 1), delays[index]);
             }
-
-           
-
-           
-
             playFrame(0);
 
             zoomer.addEventListener('click', () => {
                 zoomer.classList.toggle('zoomed');
-
                 if (zoomer.classList.contains('zoomed')) {
                     plantSound.play();
                 } else {
                     plantSound.pause();
                 }
             });
+            const elf = document.getElementById('elf');
+            const elfFrames = [
+                'pixelWork/pxGuy1.png', 'pixelWork/pxGuy2.png', 'pixelWork/pxGuy3.png', 'pixelWork/pxGuy4.png',
+            ]
+
+            let elfX = -22; // start off left edge
+            const elfSpeed = 5; // pixels per frame
+
+            function animateElf(index) {
+                // move the elf
+                elfX += elfSpeed;
+                if (elfX > window.innerWidth) elfX = -22; // reset to left edge
+                elf.style.left = elfX + 'px';
+
+                // cycle through frames
+                if (index >= elfFrames.length) index = 0;
+                elf.style.backgroundImage = `url('${elfFrames[index]}')`;
+                setTimeout(() => animateElf(index + 1), 200); // change frame every 200ms
+            }
+            animateElf(0);
+            
 
         
                 
